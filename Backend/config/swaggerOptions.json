@@ -1,0 +1,665 @@
+{
+    "openapi": "3.0.2",
+    "info":{
+        "title":"NodeJS Documentation",
+        "version":"1.0.0",
+        "contact":{
+            "name":"Tran Dat",
+            "email" :"trandat@abc.com",
+            "url": "google.com"
+        }
+    },
+    "servers": [
+        {
+            "description": "Local Server",
+            "url": "http://localhost:3105"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth":{
+                "type":"http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "bearerAuth":[]
+        }
+    ],
+    "paths": {
+        "/user/register":{
+            "post":{
+                "tags": [
+                   "Users" 
+                ],
+                "description": "Register User",
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "firstName":{
+                                        "type": "string",
+                                        "deafault": "DAT"
+                                    },
+                                    "lastName":{
+                                        "type": "string",
+                                        "default":"TRAN DAT"
+                                    },
+                                    "address":{
+                                        "type": "string",
+                                        "default": "123 Main St"
+                                    },
+                                    "city":{
+                                        "type": "string",
+                                        "default": "HA NOI"
+                                    },
+                                    "state":{
+                                        "type": "string",
+                                        "default": "123 Main St"
+                                    },
+                                    "zipCode":{
+                                        "type": "string",
+                                        "default": "123"
+                                    },
+                                    "email":{
+                                        "type": "string",
+                                        "default": "dat@123.com"
+                                    },
+                                    "password":{
+                                        "type": "string",
+                                        "default": "123456"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/user/login":{
+            "post":{
+                "tags":["Users"],
+                "description":"Login Users",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "properties":{
+                                    "email":{
+                                        "type": "string",
+                                        "deafault":"trandat@123.com"
+                                    },
+                                    "password":{
+                                        "type": "string",
+                                        "deafault": "123456"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/books":{
+            "post":{
+                "tags": [
+                    "Books" 
+                ],
+                "description": "Save book",
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "title":{
+                                        "type": "string",
+                                        "deafault": "A title"
+                                    },
+                                    "author":{
+                                        "type": "string",
+                                        "default":"TRAN DAT"
+                                    },
+                                    "ISBN":{
+                                        "type": "string",
+                                        "default": "123"
+                                    },
+                                    "numberOfPages":{
+                                        "type": "string",
+                                        "default": "3105"
+                                    },
+                                    "price":{
+                                        "type": "number",
+                                        "default": 1000
+                                    },
+                                    "yearPublished":{
+                                        "type": "string",
+                                        "default": "2023"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            },
+            "get":{
+                "tags": [
+                   "Books" 
+                ],
+                "description": "Get book",
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "title":{
+                                        "type": "string",
+                                        "deafault": "A title"
+                                    },
+                                    "author":{
+                                        "type": "string",
+                                        "default":"TRAN DAT"
+                                    },
+                                    "ISBN":{
+                                        "type": "string",
+                                        "default": "123"
+                                    },
+                                    "numberOfPages":{
+                                        "type": "string",
+                                        "default": "3105"
+                                    },
+                                    "price":{
+                                        "type": "number",
+                                        "default": 1000
+                                    },
+                                    "yearPublished":{
+                                        "type": "string",
+                                        "default": "2023"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/books/{bookId}":{
+            "get":{
+                "tags": [
+                    "Books"
+                ],
+                "description": "Get book by Id",
+                "parameters": [
+                    {
+                        "name": "bookId",
+                        "in": "path",
+                        "description": "The book id:",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            },
+            "put":{
+                "tags": [
+                    "Books"
+                ],
+                "description": "Put book by Id",
+                "parameters": [
+                    {
+                        "name": "bookId",
+                        "in": "path",
+                        "description": "The book id:",
+                        "required": true
+                    }
+                ],
+                "requestBody":{"content": {
+                    "application/json":{
+                        "schema":{
+                            "type": "object",
+                            "properties": {
+                                "title":{
+                                    "type": "string",
+                                    "deafault": "A title"
+                                },
+                                "author":{
+                                    "type": "string",
+                                    "default":"TRAN DAT"
+                                },
+                                "ISBN":{
+                                    "type": "string",
+                                    "default": "123"
+                                },
+                                "numberOfPages":{
+                                    "type": "string",
+                                    "default": "3105"
+                                },
+                                "price":{
+                                    "type": "number",
+                                    "default": 1000
+                                },
+                                "yearPublished":{
+                                    "type": "string",
+                                    "default": "2023"
+                                }
+                            }
+                        }
+                    }
+                }},
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            },
+            "delete":{
+                "tags": [
+                    "Books"
+                ],
+                "description": "Delete book by Id",
+                "parameters": [
+                    {
+                        "name": "bookId",
+                        "in": "path",
+                        "description": "The book id:",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/authors":{
+            "post":{
+                "tags": [
+                    "Authors" 
+                ],
+                "description": "Save Authors",
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "name":{
+                                        "type": "string",
+                                        "deafault": "Dat"
+                                    },
+                                    "book":{
+                                        "type": "string",
+                                        "default":"Cay cam ngot cua toi"
+                                    },
+                                    "publisher":{
+                                        "type": "string",
+                                        "default": "TRAN DAT"
+                                    },
+                                    "website":{
+                                        "type": "string",
+                                        "default": "3105"
+                                    },
+                                    "twitter":{
+                                        "type": "string",
+                                        "default": "1000"
+                                    },
+                                    "about":{
+                                        "type": "string",
+                                        "default": "any"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            },
+            "get":{
+                "tags": [
+                   "Authors" 
+                ],
+                "description": "Get Authors", 
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/authors/{authorId}":{
+            "get":{
+                "tags": [
+                    "Authors"
+                ],
+                "description": "Get author by Id",
+                "parameters": [
+                    {
+                        "name": "authorId",
+                        "in": "path",
+                        "description": "The author id:",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            },
+            "put":{
+                "tags": [
+                    "Authors"
+                ],
+                "description": "Put update author by Id",
+                "parameters": [
+                    {
+                        "name": "authorId",
+                        "in": "path",
+                        "description": "The author id:",
+                        "required": true
+                    }
+                ],
+                "requestBody":{"content": {
+                    "application/json":{
+                        "schema":{
+                            "type": "object",
+                            "properties": {
+                                "name":{
+                                    "type": "string",
+                                    "deafault": "Dat"
+                                },
+                                "book":{
+                                    "type": "string",
+                                    "default":"Cay cam ngot cua toi"
+                                },
+                                "publisher":{
+                                    "type": "string",
+                                    "default": "TRAN DAT"
+                                },
+                                "website":{
+                                    "type": "string",
+                                    "default": "3105"
+                                },
+                                "twitter":{
+                                    "type": "string",
+                                    "default": "1000"
+                                },
+                                "about":{
+                                    "type": "string",
+                                    "default": "any"
+                                }
+                            }
+                        }
+                    }
+                }},
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            },
+            "patch":{
+                "tags": [
+                    "Authors"
+                ],
+                "description": "Put update author by Id",
+                "parameters": [
+                    {
+                        "name": "authorId",
+                        "in": "path",
+                        "description": "The author id:",
+                        "required": true
+                    }
+                ],
+                "requestBody":{"content": {
+                    "application/json":{
+                        "schema":{
+                            "type": "object",
+                            "properties": {
+                                "name":{
+                                    "type": "string",
+                                    "deafault": "Dat"
+                                },
+                                "book":{
+                                    "type": "string",
+                                    "default":"Cay cam ngot cua toi"
+                                },
+                                "publisher":{
+                                    "type": "string",
+                                    "default": "TRAN DAT"
+                                },
+                                "website":{
+                                    "type": "string",
+                                    "default": "3105"
+                                },
+                                "twitter":{
+                                    "type": "string",
+                                    "default": "1000"
+                                },
+                                "about":{
+                                    "type": "string",
+                                    "default": "any"
+                                }
+                            }
+                        }
+                    }
+                }},
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            },
+            "delete":{
+                "tags": [
+                    "Books"
+                ],
+                "description": "Delete book by Id",
+                "parameters": [
+                    {
+                        "name": "bookId",
+                        "in": "path",
+                        "description": "The book id:",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "Success"
+                    },
+                    "201":{
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Notfound"
+                    },
+                    "500":{
+                        "description": "Error"
+                    },
+                    "501":{
+                        "description": "Error"
+                    }
+                }
+            }
+        }
+    }
+}
